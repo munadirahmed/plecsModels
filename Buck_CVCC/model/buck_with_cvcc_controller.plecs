@@ -26,7 +26,7 @@ Plecs {
   InitializationCommands "clear;\n\ns=tf('s');\n\n%% Controller Operating mode"
 "\n% 1 -> Model-in-the-Loop (MIL) -> Continuous domain\n% 2 -> Model-in-the-Lo"
 "op (MIL) -> Discrete domain\n% 3 -> Software-in-the-Loop (SIL)\ncontroller_mo"
-"de = 2; \n\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+"de = 3; \n\n%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 "%%%%%%%%%%%%%%%%%\nVin = 12;         % input voltage in V\nVref = 6;         "
 " % desired output voltage in V\n\nL = 100e-6;         % choke inductance in H"
 "\nDCR = 10e-3;      % choke DC resistance in ohms\nCo = 500e-6;      % output"
@@ -65,7 +65,7 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [592, 389; 1276, 853]
+    Location      [590, 493; 1274, 957]
     ZoomFactor    1
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -652,8 +652,8 @@ Plecs {
             Show          off
             Position      [320, 110]
             Direction     up
-            Flipped       on
-            LabelPosition north
+            Flipped       off
+            LabelPosition south
             Parameter {
               Variable      "IconShape"
               Value         "2"
@@ -1038,7 +1038,7 @@ Plecs {
             Type          Input
             Name          "i_L"
             Show          on
-            Position      [95, 185]
+            Position      [95, 45]
             Direction     right
             Flipped       off
             LabelPosition south
@@ -1145,7 +1145,7 @@ Plecs {
             Type          Signal
             SrcComponent  "i_L"
             SrcTerminal   1
-            Points        [320, 185]
+            Points        [320, 45]
             DstComponent  "Sum1"
             DstTerminal   2
           }
@@ -1156,7 +1156,7 @@ Plecs {
             Type          Sum
             Name          "Sum"
             Show          off
-            Position      [180, 110]
+            Position      [170, 110]
             Direction     up
             Flipped       off
             LabelPosition south
@@ -1180,10 +1180,10 @@ Plecs {
             Type          Sum
             Name          "Sum1"
             Show          off
-            Position      [330, 110]
+            Position      [320, 110]
             Direction     up
-            Flipped       on
-            LabelPosition north
+            Flipped       off
+            LabelPosition south
             Parameter {
               Variable      "IconShape"
               Value         "2"
@@ -1205,7 +1205,7 @@ Plecs {
             SrcComponent  "Components/Control/Modulators/Sawtooth PWM"
             Name          "Sawtooth PWM"
             Show          on
-            Position      [490, 110]
+            Position      [480, 110]
             Direction     up
             Flipped       off
             LabelPosition south
@@ -1274,7 +1274,7 @@ Plecs {
             Type          Input
             Name          "i_L"
             Show          on
-            Position      [95, 185]
+            Position      [95, 45]
             Direction     right
             Flipped       off
             LabelPosition south
@@ -1331,7 +1331,7 @@ Plecs {
             Type          Subsystem
             Name          "PI Controller \n(VLoop)"
             Show          on
-            Position      [255, 110]
+            Position      [245, 110]
             Direction     up
             Flipped       off
             LabelPosition south
@@ -1716,7 +1716,7 @@ Plecs {
             Type          Subsystem
             Name          "PI Controller \n(ILoop)"
             Show          on
-            Position      [405, 110]
+            Position      [395, 110]
             Direction     up
             Flipped       off
             LabelPosition south
@@ -2143,7 +2143,7 @@ Plecs {
             Type          Signal
             SrcComponent  "Vo"
             SrcTerminal   1
-            Points        [180, 80]
+            Points        [170, 80]
             DstComponent  "Sum"
             DstTerminal   2
           }
@@ -2151,7 +2151,7 @@ Plecs {
             Type          Signal
             SrcComponent  "i_L"
             SrcTerminal   1
-            Points        [330, 185]
+            Points        [320, 45]
             DstComponent  "Sum1"
             DstTerminal   2
           }
@@ -2181,7 +2181,7 @@ Plecs {
             Type          Input
             Name          "i_L"
             Show          on
-            Position      [95, 185]
+            Position      [95, 40]
             Direction     right
             Flipped       off
             LabelPosition south
@@ -2200,7 +2200,7 @@ Plecs {
             Type          Output
             Name          "sw"
             Show          on
-            Position      [560, 110]
+            Position      [560, 100]
             Direction     left
             Flipped       on
             LabelPosition north
@@ -2235,120 +2235,11 @@ Plecs {
             }
           }
           Component {
-            Type          CScript
-            Name          "Current \nCompensator"
-            Show          on
-            Position      [385, 110]
-            Direction     up
-            Flipped       off
-            LabelPosition south
-            Parameter {
-              Variable      "DialogGeometry"
-              Value         "[744 260 422 314]"
-              Show          off
-            }
-            Parameter {
-              Variable      "NumInputs"
-              Value         "[1 1]"
-              Show          off
-            }
-            Parameter {
-              Variable      "NumOutputs"
-              Value         "1"
-              Show          off
-            }
-            Parameter {
-              Variable      "NumContStates"
-              Value         "0"
-              Show          off
-            }
-            Parameter {
-              Variable      "NumDiscStates"
-              Value         "0"
-              Show          off
-            }
-            Parameter {
-              Variable      "NumZCSignals"
-              Value         "0"
-              Show          off
-            }
-            Parameter {
-              Variable      "DirectFeedthrough"
-              Value         "1"
-              Show          off
-            }
-            Parameter {
-              Variable      "Ts"
-              Value         "0"
-              Show          off
-            }
-            Parameter {
-              Variable      "Parameters"
-              Value         ""
-              Show          off
-            }
-            Parameter {
-              Variable      "LangStandard"
-              Value         "2"
-              Show          off
-            }
-            Parameter {
-              Variable      "GnuExtensions"
-              Value         "1"
-              Show          off
-            }
-            Parameter {
-              Variable      "RuntimeCheck"
-              Value         "2"
-              Show          off
-            }
-            Parameter {
-              Variable      "Declarations"
-              Value         ""
-              Show          off
-            }
-            Parameter {
-              Variable      "StartFcn"
-              Value         ""
-              Show          off
-            }
-            Parameter {
-              Variable      "OutputFcn"
-              Value         ""
-              Show          off
-            }
-            Parameter {
-              Variable      "UpdateFcn"
-              Value         ""
-              Show          off
-            }
-            Parameter {
-              Variable      "DerivativeFcn"
-              Value         ""
-              Show          off
-            }
-            Parameter {
-              Variable      "TerminateFcn"
-              Value         ""
-              Show          off
-            }
-            Parameter {
-              Variable      "StoreCustomStateFcn"
-              Value         ""
-              Show          off
-            }
-            Parameter {
-              Variable      "RestoreCustomStateFcn"
-              Value         ""
-              Show          off
-            }
-          }
-          Component {
             Type          Reference
             SrcComponent  "Components/Control/Modulators/Sawtooth PWM"
             Name          "Sawtooth PWM"
             Show          on
-            Position      [490, 110]
+            Position      [480, 100]
             Direction     up
             Flipped       off
             LabelPosition south
@@ -2404,7 +2295,7 @@ Plecs {
             LabelPosition south
             Parameter {
               Variable      "DialogGeometry"
-              Value         "[1229 374 422 314]"
+              Value         "[1229 374 626 314]"
               Show          off
             }
             Parameter {
@@ -2439,7 +2330,7 @@ Plecs {
             }
             Parameter {
               Variable      "Ts"
-              Value         "1/Vloop.F"
+              Value         "1/VLoop.F"
               Show          off
             }
             Parameter {
@@ -2516,6 +2407,128 @@ Plecs {
               Show          off
             }
           }
+          Component {
+            Type          CScript
+            Name          "Current \nCompensator"
+            Show          on
+            Position      [350, 100]
+            Direction     up
+            Flipped       off
+            LabelPosition south
+            Parameter {
+              Variable      "DialogGeometry"
+              Value         "[1099 410 727 314]"
+              Show          off
+            }
+            Parameter {
+              Variable      "NumInputs"
+              Value         "[1 1]"
+              Show          off
+            }
+            Parameter {
+              Variable      "NumOutputs"
+              Value         "1"
+              Show          off
+            }
+            Parameter {
+              Variable      "NumContStates"
+              Value         "0"
+              Show          off
+            }
+            Parameter {
+              Variable      "NumDiscStates"
+              Value         "0"
+              Show          off
+            }
+            Parameter {
+              Variable      "NumZCSignals"
+              Value         "0"
+              Show          off
+            }
+            Parameter {
+              Variable      "DirectFeedthrough"
+              Value         "1"
+              Show          off
+            }
+            Parameter {
+              Variable      "Ts"
+              Value         "1/ILoop.F"
+              Show          off
+            }
+            Parameter {
+              Variable      "Parameters"
+              Value         ""
+              Show          off
+            }
+            Parameter {
+              Variable      "LangStandard"
+              Value         "2"
+              Show          off
+            }
+            Parameter {
+              Variable      "GnuExtensions"
+              Value         "1"
+              Show          off
+            }
+            Parameter {
+              Variable      "RuntimeCheck"
+              Value         "2"
+              Show          off
+            }
+            Parameter {
+              Variable      "Declarations"
+              Value         "#include \"./../code/PI_Controller.h\" \n"
+"#include \"./../code/PI_Controller.c\"   \n"
+"\n"
+"piControllerParam_t iLoopCtrllr = {.b_coeff = {1.008f, -0.9921f},\n"
+"\t\t\t\t\t\t\t\t\t\t\t  .x={0.0f,0.0f},\n"
+"\t\t\t\t\t\t\t\t\t\t\t  .y={0.0f,0.0f},\n"
+"\t\t\t\t\t\t\t\t\t\t\t  .y_max = 1.0f,\n"
+"\t\t\t\t\t\t\t\t\t\t\t  .y_min = 0.0f\n"
+"\t\t\t\t\t\t\t\t\t\t\t  };"
+              Show          off
+            }
+            Parameter {
+              Variable      "StartFcn"
+              Value         ""
+              Show          off
+            }
+            Parameter {
+              Variable      "OutputFcn"
+              Value         "float I_L = InputSignal(0,0);\n"
+"float I_ref = InputSignal(1,0);\n"
+"\n"
+"float d = piController(&iLoopCtrllr, I_L, I_ref);\n"
+"\n"
+"OutputSignal(0,0) = d;"
+              Show          off
+            }
+            Parameter {
+              Variable      "UpdateFcn"
+              Value         ""
+              Show          off
+            }
+            Parameter {
+              Variable      "DerivativeFcn"
+              Value         ""
+              Show          off
+            }
+            Parameter {
+              Variable      "TerminateFcn"
+              Value         ""
+              Show          off
+            }
+            Parameter {
+              Variable      "StoreCustomStateFcn"
+              Value         ""
+              Show          off
+            }
+            Parameter {
+              Variable      "RestoreCustomStateFcn"
+              Value         ""
+              Show          off
+            }
+          }
           Connection {
             Type          Signal
             SrcComponent  "Vo"
@@ -2533,9 +2546,23 @@ Plecs {
           }
           Connection {
             Type          Signal
+            SrcComponent  "Sawtooth PWM"
+            SrcTerminal   1
+            DstComponent  "sw"
+            DstTerminal   1
+          }
+          Connection {
+            Type          Signal
             SrcComponent  "i_L"
             SrcTerminal   1
-            Points        [330, 185; 330, 115]
+            Points        [295, 40; 295, 95]
+            DstComponent  "Current \nCompensator"
+            DstTerminal   1
+          }
+          Connection {
+            Type          Signal
+            SrcComponent  "Voltage \nCompensator"
+            SrcTerminal   3
             DstComponent  "Current \nCompensator"
             DstTerminal   2
           }
@@ -2545,20 +2572,6 @@ Plecs {
             SrcTerminal   3
             DstComponent  "Sawtooth PWM"
             DstTerminal   2
-          }
-          Connection {
-            Type          Signal
-            SrcComponent  "Sawtooth PWM"
-            SrcTerminal   1
-            DstComponent  "sw"
-            DstTerminal   1
-          }
-          Connection {
-            Type          Signal
-            SrcComponent  "Voltage \nCompensator"
-            SrcTerminal   3
-            DstComponent  "Current \nCompensator"
-            DstTerminal   1
           }
         }
       }
@@ -2900,4 +2913,4 @@ Plecs {
     Response      "V_Loop/Response"
   }
 }
-DemoSignature "jaCUv0vyMrqiFJZZOqoYVUbTi+aBqm9ldxbayrC5tZI="
+DemoSignature "cbNiN9tQsRRi2OKYFjfUXH0o8oLamegB+4pp06Y9k1M="
